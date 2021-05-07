@@ -21,7 +21,7 @@ const search = async (param) => {
 	try {
 		const myKey = keyProvider();
 		const res = await axios.get(
-			"https://youtube.googleapis.com/youtube/v3/searc",
+			"https://youtube.googleapis.com/youtube/v3/search",
 			{
 				params: {
 					part: "snippet",
