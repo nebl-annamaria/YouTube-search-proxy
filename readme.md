@@ -16,4 +16,8 @@ place your [YouTube API keys][1] in .env file
 
 run `docker-compose up`
 
-run `curl http://localhost:3000/aerosmith`
+with load balancing:
+
+run `docker-compose up --scale server=2`
+
+run `curl http://localhost:4000/aerosmith`
