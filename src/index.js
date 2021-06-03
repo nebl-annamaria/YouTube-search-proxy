@@ -1,6 +1,7 @@
 const express = require("express");
 const searchController = require("./controllers/searchController");
 const app = express();
+const scrapeService = require("./services/scrapeService");
 
 app.use(express.json());
 app.use(
@@ -10,6 +11,8 @@ app.use(
 );
 
 const port = 3000;
+
+scrapeService.initialize();
 
 app.get("/:search", function (req, res) {
   searchController.search(req, res);
