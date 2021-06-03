@@ -90,6 +90,7 @@ async function initialize() {
     waitUntil: "load",
   });
   await acceptCookies(myPage);
+  console.log("initialized");
 }
 
 function getSearchResults(input) {

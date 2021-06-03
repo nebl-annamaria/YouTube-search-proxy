@@ -1,0 +1,10 @@
+version: "3.3"
+services:
+  server:
+    container_name: "proxy"
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/code
+    command: "nodemon src/index.js"

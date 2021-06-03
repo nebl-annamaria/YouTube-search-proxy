@@ -14,6 +14,6 @@ place your [YouTube API keys][1] in .env file
 
 [1]: https://developers.google.com/youtube/v3/getting-started
 
-run `npm run start`
+run `docker-compose up`
 
 run `curl http://localhost:3000/aerosmith`

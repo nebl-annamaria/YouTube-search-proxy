@@ -6,7 +6,10 @@ const Browser = (function () {
     if (browser) {
       return browser;
     } else {
-      browser = await puppeteer.launch();
+      browser = await puppeteer.launch({
+        executablePath: "/usr/bin/chromium-browser",
+        args: ["--no-sandbox"],
+      });
       return browser;
     }
   }
