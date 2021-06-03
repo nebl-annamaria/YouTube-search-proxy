@@ -18,6 +18,10 @@ run `docker-compose up`
 
 with load balancing:
 
-run `docker-compose up --scale server=2`
+run `docker-compose up --scale server=3`
+
+benchmark:
+
+`ab -c 3 -n 9 http://localhost:4000/aerosmith`
 
 run `curl http://localhost:4000/aerosmith`

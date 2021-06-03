@@ -2,6 +2,7 @@ const browserService = require("./browserService");
 
 async function scrape(param) {
   try {
+    console.log("scrape!");
     const myPage = await browserService.Browser.getPage();
     await myPage.goto(
       `https://www.youtube.com/results?search_query=${param} `,
