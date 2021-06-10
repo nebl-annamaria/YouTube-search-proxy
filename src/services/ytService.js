@@ -34,7 +34,7 @@ const search = async (param) => {
       }
     );
 
-    let items = res.data.items;
+    const items = res.data.items;
 
     let data = [];
 
@@ -46,23 +46,23 @@ const search = async (param) => {
       data.push({ thumbnail: thumbnail, title: title, id: id });
     }
 
-    let response = { status: 200, data: data };
+    const response = { status: 200, data: data };
     return response;
   } catch (error) {
     if (error.response) {
-      let response = {
+      const response = {
         status: error.response.status,
         data: error.message,
       };
       return response;
     } else if (error.request) {
-      let response = {
+      const response = {
         status: 502,
         data: "bad gateway",
       };
       return response;
     } else {
-      let response = {
+      const response = {
         status: 500,
         data: "something went wrong with the YT api service",
       };

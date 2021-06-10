@@ -18,21 +18,21 @@ async function scrape(param) {
     await autoScroll(myPage);
 
     const result = await myPage.evaluate(() => {
-      let elements = document.getElementsByTagName("ytd-video-renderer");
+      const elements = document.getElementsByTagName("ytd-video-renderer");
 
-      let array = Array.from(elements).slice(0, 10);
+      const array = Array.from(elements).slice(0, 10);
 
       let data = [];
 
       for (element of array) {
-        let thumbnail = element
+        const thumbnail = element
           .getElementsByTagName("img")[0]
           .getAttribute("src");
 
-        let title = element.getElementsByTagName("yt-formatted-string")[0]
+        const title = element.getElementsByTagName("yt-formatted-string")[0]
           .innerText;
 
-        let id = element
+        const id = element
           .getElementsByTagName("ytd-thumbnail")[0]
           .getElementsByTagName("a")[0]
           .getAttribute("href")
@@ -55,9 +55,9 @@ async function scrape(param) {
 async function autoScroll(page) {
   await page.evaluate(async () => {
     await new Promise((resolve) => {
-      var totalHeight = 0;
-      var distance = 100;
-      var timer = setInterval(() => {
+      let totalHeight = 0;
+      const distance = 100;
+      const timer = setInterval(() => {
         window.scrollBy(0, distance);
         totalHeight += distance;
 
@@ -72,7 +72,7 @@ async function autoScroll(page) {
 
 async function acceptCookies(page) {
   const buttonChecker = await page.evaluate(() => {
-    let button = document.getElementsByClassName("VfPpkd-LgbsSe")[0];
+    const button = document.getElementsByClassName("VfPpkd-LgbsSe")[0];
 
     return button;
   });
