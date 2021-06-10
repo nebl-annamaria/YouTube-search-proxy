@@ -8,20 +8,18 @@ After that, it switches to a Puppeteer scraper.
 
 clone the repository
 
-run `npm install`
-
 place your [YouTube API keys][1] in .env file
 
 [1]: https://developers.google.com/youtube/v3/getting-started
 
 run `docker-compose up`
 
-with load balancing:
+run `curl http://localhost:4000/aerosmith`
+
+multiple instances with load balancing:
 
 run `docker-compose up --scale server=3`
 
 benchmark:
 
 `ab -c 3 -n 9 http://localhost:4000/aerosmith`
-
-run `curl http://localhost:4000/aerosmith`
